@@ -1,0 +1,39 @@
+CREATE TABLE `business_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) DEFAULT NULL COMMENT '用户id',
+  `longitude` varchar(500) DEFAULT NULL COMMENT '经度',
+  `latitude` varchar(500) DEFAULT NULL COMMENT '纬度',
+  `business_name` varchar(300) DEFAULT NULL COMMENT '商品名称',
+  `business_price` decimal(14,2) DEFAULT NULL COMMENT '商品价格',
+  `province_name` varchar(300) DEFAULT NULL COMMENT '省份',
+  `city_name` varchar(300) DEFAULT NULL COMMENT '城市',
+  `district_name` varchar(300) DEFAULT NULL COMMENT '区域',
+  `category` varchar(300) DEFAULT NULL COMMENT '种类',
+  `field1` varchar(300) DEFAULT NULL COMMENT '冗余字段1',
+  `field2` varchar(300) DEFAULT NULL COMMENT '冗余字段2',
+  `flag` varchar(20) DEFAULT NULL COMMENT '执行状态',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `version` int(11) DEFAULT '0' COMMENT '版本号',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COMMENT='商品表';
+
+
+
+CREATE TABLE `team` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `team_name` varchar(100) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  `version` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+
+
+INSERT INTO `team`(`team_name`, `create_time`, `update_time`, `version`) VALUES ('abin4', now(),  now(), 0);
+
+INSERT INTO `business_info`(`user_id`, `longitude`, `latitude`, `business_name`, `business_price`, `province_name`, `city_name`, `district_name`, `category`, `field1`, `field2`, `flag`, `create_time`, `update_time`, `version`) VALUES ('11123', '116.480979', '39.827404', '海底捞', 450.05, '北京', '北京市', '朝阳区', 'COMMON', '二狗', '狗蛋', 'PAYED', now(), now(), 0);
+
+

@@ -1,0 +1,15 @@
+[zk: localhost:2181(CONNECTED) 4] get /otter/canal/destinations/example/1001/running
+{"active":true,"address":"10.10.4.9:51402","clientId":1001}
+
+
+[zk: localhost:2181(CONNECTED) 3] get /otter/canal/destinations/example/1001/filter
+deal.business_info
+
+
+[zk: localhost:2181(CONNECTED) 6] get /otter/canal/destinations/example/1001/cursor
+{"@type":"com.alibaba.otter.canal.protocol.position.LogPosition","identity":{"slaveId":-1,"sourceAddress":{"address":"zoo2","port":3306}},"postion":{"included":false,"journalName":"mysql-bin.000023","position":3664071,"serverId":1,"timestamp":1519400731000}}
+
+
+[zk: localhost:2181(CONNECTED) 5] ls2 /otter/canal/destinations/example/1001/cursor
+[zk: localhost:2181(CONNECTED) 2] ls2 /otter/canal/destinations/example/1001/filter
+[zk: localhost:2181(CONNECTED) 1] ls2 /otter/canal/destinations/example/1001/running

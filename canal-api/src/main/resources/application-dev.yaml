@@ -1,0 +1,35 @@
+server:
+        port: 8099  #配置端口
+        address : localhost
+        connecyion.timeout: 6000
+        tomcat.max-threads: 0
+        tomcat.uri-encoding: UTF-8
+        servlet:
+                  session:
+                            timeout: 300
+
+spring:
+        application:
+                      name: canal-cluster
+        devtools:
+                        restart:
+                                enabled: true #热部署生效
+                                additional-paths: canal-cluster/src/main/java  #设置重启的目录
+          #                      exclude: WEB-INF/**   #classpath目录下的WEB-INF文件夹内容修改不重启
+
+search:
+        index:
+              address: http://localhost:8080/elasticsearch/indexMap
+logging:
+        level:
+          com:
+              abin:
+                   lee:
+                      elasticsearch:
+                                    svr:
+                                        api:
+                                            dao: debug
+              alibaba:
+                      druid: debug
+
+
